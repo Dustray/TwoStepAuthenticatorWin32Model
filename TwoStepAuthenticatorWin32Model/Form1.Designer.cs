@@ -32,12 +32,21 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.resetSecret = new System.Windows.Forms.TabPage();
+            this.serverRefreshNewSecretBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.serverSetNewSecretBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.serverGenerateNewSerectText = new System.Windows.Forms.TextBox();
             this.verificationSecret = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.serverVerifyCodeBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.serverVerifyCodeText = new System.Windows.Forms.TextBox();
             this.deleteSecret = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.serverDeleteCodeBtn = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.serverDeleteCodeText = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cilentTimerLab = new System.Windows.Forms.Label();
             this.cilentShowUserLab = new System.Windows.Forms.Label();
@@ -49,15 +58,6 @@
             this.cilentAddSecretText = new System.Windows.Forms.TextBox();
             this.cilentPasteSecretBtn = new System.Windows.Forms.Button();
             this.cilentUserText = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.serverRefreshNewSecretBtn = new System.Windows.Forms.Button();
             this.cilentSecretTimer = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -71,9 +71,9 @@
             // 
             this.groupBox1.Controls.Add(this.tabControl1);
             this.groupBox1.Location = new System.Drawing.Point(10, 10);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(346, 320);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -85,7 +85,7 @@
             this.tabControl1.Controls.Add(this.verificationSecret);
             this.tabControl1.Controls.Add(this.deleteSecret);
             this.tabControl1.Location = new System.Drawing.Point(4, 19);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(337, 267);
@@ -99,13 +99,24 @@
             this.resetSecret.Controls.Add(this.label6);
             this.resetSecret.Controls.Add(this.serverGenerateNewSerectText);
             this.resetSecret.Location = new System.Drawing.Point(4, 22);
-            this.resetSecret.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetSecret.Margin = new System.Windows.Forms.Padding(2);
             this.resetSecret.Name = "resetSecret";
-            this.resetSecret.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.resetSecret.Padding = new System.Windows.Forms.Padding(2);
             this.resetSecret.Size = new System.Drawing.Size(329, 241);
             this.resetSecret.TabIndex = 0;
             this.resetSecret.Text = "重设密钥";
             this.resetSecret.UseVisualStyleBackColor = true;
+            // 
+            // serverRefreshNewSecretBtn
+            // 
+            this.serverRefreshNewSecretBtn.Location = new System.Drawing.Point(225, 57);
+            this.serverRefreshNewSecretBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.serverRefreshNewSecretBtn.Name = "serverRefreshNewSecretBtn";
+            this.serverRefreshNewSecretBtn.Size = new System.Drawing.Size(77, 25);
+            this.serverRefreshNewSecretBtn.TabIndex = 4;
+            this.serverRefreshNewSecretBtn.Text = "刷  新";
+            this.serverRefreshNewSecretBtn.UseVisualStyleBackColor = true;
+            this.serverRefreshNewSecretBtn.Click += new System.EventHandler(this.serverRefreshNewSecretBtn_Click);
             // 
             // label7
             // 
@@ -120,7 +131,7 @@
             // serverSetNewSecretBtn
             // 
             this.serverSetNewSecretBtn.Location = new System.Drawing.Point(225, 123);
-            this.serverSetNewSecretBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.serverSetNewSecretBtn.Margin = new System.Windows.Forms.Padding(2);
             this.serverSetNewSecretBtn.Name = "serverSetNewSecretBtn";
             this.serverSetNewSecretBtn.Size = new System.Drawing.Size(77, 27);
             this.serverSetNewSecretBtn.TabIndex = 2;
@@ -143,7 +154,7 @@
             // 
             this.serverGenerateNewSerectText.Font = new System.Drawing.Font("宋体", 12F);
             this.serverGenerateNewSerectText.Location = new System.Drawing.Point(24, 88);
-            this.serverGenerateNewSerectText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.serverGenerateNewSerectText.Margin = new System.Windows.Forms.Padding(2);
             this.serverGenerateNewSerectText.Name = "serverGenerateNewSerectText";
             this.serverGenerateNewSerectText.Size = new System.Drawing.Size(279, 26);
             this.serverGenerateNewSerectText.TabIndex = 0;
@@ -151,32 +162,114 @@
             // verificationSecret
             // 
             this.verificationSecret.Controls.Add(this.label9);
-            this.verificationSecret.Controls.Add(this.button4);
+            this.verificationSecret.Controls.Add(this.serverVerifyCodeBtn);
             this.verificationSecret.Controls.Add(this.label10);
-            this.verificationSecret.Controls.Add(this.textBox4);
+            this.verificationSecret.Controls.Add(this.serverVerifyCodeText);
             this.verificationSecret.Location = new System.Drawing.Point(4, 22);
-            this.verificationSecret.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.verificationSecret.Margin = new System.Windows.Forms.Padding(2);
             this.verificationSecret.Name = "verificationSecret";
-            this.verificationSecret.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.verificationSecret.Padding = new System.Windows.Forms.Padding(2);
             this.verificationSecret.Size = new System.Drawing.Size(329, 241);
             this.verificationSecret.TabIndex = 1;
             this.verificationSecret.Text = "验证密钥";
             this.verificationSecret.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 129);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(65, 12);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "验证状态：";
+            // 
+            // serverVerifyCodeBtn
+            // 
+            this.serverVerifyCodeBtn.Location = new System.Drawing.Point(225, 123);
+            this.serverVerifyCodeBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.serverVerifyCodeBtn.Name = "serverVerifyCodeBtn";
+            this.serverVerifyCodeBtn.Size = new System.Drawing.Size(77, 27);
+            this.serverVerifyCodeBtn.TabIndex = 6;
+            this.serverVerifyCodeBtn.Text = "验  证";
+            this.serverVerifyCodeBtn.UseVisualStyleBackColor = true;
+            this.serverVerifyCodeBtn.Click += new System.EventHandler(this.serverVerifyCodeBtn_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("宋体", 12F);
+            this.label10.Location = new System.Drawing.Point(21, 59);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 16);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "验证码：";
+            // 
+            // serverVerifyCodeText
+            // 
+            this.serverVerifyCodeText.Font = new System.Drawing.Font("宋体", 12F);
+            this.serverVerifyCodeText.Location = new System.Drawing.Point(24, 88);
+            this.serverVerifyCodeText.Margin = new System.Windows.Forms.Padding(2);
+            this.serverVerifyCodeText.Name = "serverVerifyCodeText";
+            this.serverVerifyCodeText.Size = new System.Drawing.Size(279, 26);
+            this.serverVerifyCodeText.TabIndex = 4;
+            // 
             // deleteSecret
             // 
             this.deleteSecret.Controls.Add(this.label11);
-            this.deleteSecret.Controls.Add(this.button5);
+            this.deleteSecret.Controls.Add(this.serverDeleteCodeBtn);
             this.deleteSecret.Controls.Add(this.label12);
-            this.deleteSecret.Controls.Add(this.textBox5);
+            this.deleteSecret.Controls.Add(this.serverDeleteCodeText);
             this.deleteSecret.Location = new System.Drawing.Point(4, 22);
-            this.deleteSecret.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteSecret.Margin = new System.Windows.Forms.Padding(2);
             this.deleteSecret.Name = "deleteSecret";
-            this.deleteSecret.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.deleteSecret.Padding = new System.Windows.Forms.Padding(2);
             this.deleteSecret.Size = new System.Drawing.Size(329, 241);
             this.deleteSecret.TabIndex = 2;
             this.deleteSecret.Text = "删除密钥";
             this.deleteSecret.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(22, 129);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 12);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "密钥状态：";
+            // 
+            // serverDeleteCodeBtn
+            // 
+            this.serverDeleteCodeBtn.Location = new System.Drawing.Point(225, 123);
+            this.serverDeleteCodeBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.serverDeleteCodeBtn.Name = "serverDeleteCodeBtn";
+            this.serverDeleteCodeBtn.Size = new System.Drawing.Size(77, 27);
+            this.serverDeleteCodeBtn.TabIndex = 10;
+            this.serverDeleteCodeBtn.Text = "删  除";
+            this.serverDeleteCodeBtn.UseVisualStyleBackColor = true;
+            this.serverDeleteCodeBtn.Click += new System.EventHandler(this.serverDeleteCodeBtn_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("宋体", 12F);
+            this.label12.Location = new System.Drawing.Point(21, 59);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(72, 16);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "验证码：";
+            // 
+            // serverDeleteCodeText
+            // 
+            this.serverDeleteCodeText.Font = new System.Drawing.Font("宋体", 12F);
+            this.serverDeleteCodeText.Location = new System.Drawing.Point(24, 88);
+            this.serverDeleteCodeText.Margin = new System.Windows.Forms.Padding(2);
+            this.serverDeleteCodeText.Name = "serverDeleteCodeText";
+            this.serverDeleteCodeText.Size = new System.Drawing.Size(279, 26);
+            this.serverDeleteCodeText.TabIndex = 8;
             // 
             // groupBox2
             // 
@@ -190,10 +283,10 @@
             this.groupBox2.Controls.Add(this.cilentAddSecretText);
             this.groupBox2.Controls.Add(this.cilentPasteSecretBtn);
             this.groupBox2.Controls.Add(this.cilentUserText);
-            this.groupBox2.Location = new System.Drawing.Point(357, 10);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Location = new System.Drawing.Point(360, 10);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(346, 320);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -247,7 +340,7 @@
             // cilentAddSecretBtn
             // 
             this.cilentAddSecretBtn.Location = new System.Drawing.Point(268, 44);
-            this.cilentAddSecretBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cilentAddSecretBtn.Margin = new System.Windows.Forms.Padding(2);
             this.cilentAddSecretBtn.Name = "cilentAddSecretBtn";
             this.cilentAddSecretBtn.Size = new System.Drawing.Size(74, 20);
             this.cilentAddSecretBtn.TabIndex = 5;
@@ -278,7 +371,7 @@
             // cilentAddSecretText
             // 
             this.cilentAddSecretText.Location = new System.Drawing.Point(49, 44);
-            this.cilentAddSecretText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cilentAddSecretText.Margin = new System.Windows.Forms.Padding(2);
             this.cilentAddSecretText.Name = "cilentAddSecretText";
             this.cilentAddSecretText.Size = new System.Drawing.Size(216, 21);
             this.cilentAddSecretText.TabIndex = 2;
@@ -286,7 +379,7 @@
             // cilentPasteSecretBtn
             // 
             this.cilentPasteSecretBtn.Location = new System.Drawing.Point(268, 19);
-            this.cilentPasteSecretBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cilentPasteSecretBtn.Margin = new System.Windows.Forms.Padding(2);
             this.cilentPasteSecretBtn.Name = "cilentPasteSecretBtn";
             this.cilentPasteSecretBtn.Size = new System.Drawing.Size(74, 20);
             this.cilentPasteSecretBtn.TabIndex = 1;
@@ -297,101 +390,10 @@
             // cilentUserText
             // 
             this.cilentUserText.Location = new System.Drawing.Point(49, 19);
-            this.cilentUserText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cilentUserText.Margin = new System.Windows.Forms.Padding(2);
             this.cilentUserText.Name = "cilentUserText";
             this.cilentUserText.Size = new System.Drawing.Size(216, 21);
             this.cilentUserText.TabIndex = 0;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 129);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 12);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "验证状态：";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(225, 123);
-            this.button4.Margin = new System.Windows.Forms.Padding(2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 27);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "验  证";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("宋体", 12F);
-            this.label10.Location = new System.Drawing.Point(21, 59);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 16);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "验证码：";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox4.Location = new System.Drawing.Point(24, 88);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(279, 26);
-            this.textBox4.TabIndex = 4;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 129);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 12);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "密钥状态：";
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(225, 123);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(77, 27);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "删  除";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("宋体", 12F);
-            this.label12.Location = new System.Drawing.Point(21, 59);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 16);
-            this.label12.TabIndex = 9;
-            this.label12.Text = "验证码：";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("宋体", 12F);
-            this.textBox5.Location = new System.Drawing.Point(24, 88);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(279, 26);
-            this.textBox5.TabIndex = 8;
-            // 
-            // serverRefreshNewSecretBtn
-            // 
-            this.serverRefreshNewSecretBtn.Location = new System.Drawing.Point(225, 57);
-            this.serverRefreshNewSecretBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.serverRefreshNewSecretBtn.Name = "serverRefreshNewSecretBtn";
-            this.serverRefreshNewSecretBtn.Size = new System.Drawing.Size(77, 25);
-            this.serverRefreshNewSecretBtn.TabIndex = 4;
-            this.serverRefreshNewSecretBtn.Text = "刷  新";
-            this.serverRefreshNewSecretBtn.UseVisualStyleBackColor = true;
-            this.serverRefreshNewSecretBtn.Click += new System.EventHandler(this.serverRefreshNewSecretBtn_Click);
             // 
             // cilentSecretTimer
             // 
@@ -406,7 +408,7 @@
             this.ClientSize = new System.Drawing.Size(716, 341);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(732, 525);
             this.MinimumSize = new System.Drawing.Size(732, 380);
             this.Name = "Form1";
@@ -448,13 +450,13 @@
         private System.Windows.Forms.TextBox serverGenerateNewSerectText;
         private System.Windows.Forms.Label cilentTimerLab;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button serverVerifyCodeBtn;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox serverVerifyCodeText;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button serverDeleteCodeBtn;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox serverDeleteCodeText;
         private System.Windows.Forms.Button serverRefreshNewSecretBtn;
         private System.Windows.Forms.Timer cilentSecretTimer;
     }

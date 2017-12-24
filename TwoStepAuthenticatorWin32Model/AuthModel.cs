@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace TwoStepAuthenticatorWin32Model
@@ -14,7 +15,7 @@ namespace TwoStepAuthenticatorWin32Model
             private static string secretKey;//模拟服务端保存的密钥//应加密后存储在服务器中
 
             //验证密钥
-            public static bool verificationSecret(string userCode)
+            public static bool verifySecret(string userCode)
             {
                 if (secretKey == null)
                 {
@@ -50,7 +51,12 @@ namespace TwoStepAuthenticatorWin32Model
                 if (secretKey == null) return true;
                 else return false;
             }
-
+            //判断密钥是否为空
+            public static void removeSecret()
+            {
+                if (secretKey != null)
+                    secretKey = null;
+            }
         }
         public static class Cilent
         {
@@ -90,10 +96,33 @@ namespace TwoStepAuthenticatorWin32Model
                 else return false;
             }
         }
+        //获取当前UNIX时间
         public static long GetTimeStamp()
         {
             TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
             return Convert.ToInt64(ts.TotalSeconds * 1000);
+        }
+        //设置计数器
+        public static int SetCountTime()
+        {
+            //设置计数器
+            long timeLong = (AuthModel.GetTimeStamp() / 1000);
+            long timeLongAfter = (AuthModel.GetTimeStamp() / 1000 / 30) * 30;
+            return 30 - (int)(timeLong - timeLongAfter) + 1;
+        }
+        //判断是否为Code格式
+        public static bool isNumeric(string message)
+        {
+            if (message != "" && Regex.IsMatch(message, @"^\d{6}$"))
+            {
+                //成功
+                return true;
+            }
+            else
+            {
+                //失败
+                return false;
+            }
         }
     }
 }

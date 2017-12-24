@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -61,16 +62,14 @@ namespace TwoStepAuthenticatorWin32Model
                 string se = AuthModel.Cilent.getCodeFromSecret();
                 cilentShowSecretLab.Text = se.Insert(3," ");
                 //设置计数器
-                long timeLong = (AuthModel.GetTimeStamp() / 1000 );
-                long timeLongAfter =   (AuthModel.GetTimeStamp() / 1000 / 30)*30;
-                Count = 30-(int)(timeLong-  timeLongAfter )+1;
+                Count = AuthModel.SetCountTime();
             }
             else
             {
                 MessageBox.Show("客户端：密钥不合法。");
             }
 
-            if (cilentUserText.Text != "")
+            if (cilentUserText.Text == "")
             {
                 cilentShowUserLab.Text = "Trump@usa.com";
             }
@@ -79,6 +78,8 @@ namespace TwoStepAuthenticatorWin32Model
                 cilentShowUserLab.Text = cilentUserText.Text;
             }
         }
+
+
 
         private void cilentSecretTimer_Tick(object sender, EventArgs e)
         {
@@ -93,6 +94,57 @@ namespace TwoStepAuthenticatorWin32Model
             cilentTimerLab.Text = "" + Count--;
         }
 
-        
+        private void serverVerifyCodeBtn_Click(object sender, EventArgs e)
+        {
+            string code = serverVerifyCodeText.Text.ToString();
+            if (AuthModel.Server.checkIsSecretEmpty())
+            {
+                MessageBox.Show("当前未开启两步验证。");
+            }
+            else if(AuthModel.isNumeric(code))
+            {
+                if (AuthModel.Server.verifySecret(code))
+                {
+                    //验证成功
+                    MessageBox.Show("验证成功！");
+                }
+                else
+                {
+                    //验证失败
+                    MessageBox.Show("验证码错误！");
+                }
+            }
+            else
+            {
+                MessageBox.Show("输入格式不正确");
+            }
+        }
+
+        private void serverDeleteCodeBtn_Click(object sender, EventArgs e)
+        {
+            string code = serverDeleteCodeText.Text.ToString();
+            if (AuthModel.Server.checkIsSecretEmpty())
+            {
+                MessageBox.Show("当前未开启两步验证。");
+            }
+            else if (AuthModel.isNumeric(code))
+            {
+                if (AuthModel.Server.verifySecret(code))
+                {
+                    //验证成功
+                    AuthModel.Server.removeSecret();
+                    MessageBox.Show("验证成功,两步验证已关闭！");
+                }
+                else
+                {
+                    //验证失败
+                    MessageBox.Show("验证码错误！");
+                }
+            }
+            else
+            {
+                MessageBox.Show("输入格式不正确");
+            }
+        }
     }
 }

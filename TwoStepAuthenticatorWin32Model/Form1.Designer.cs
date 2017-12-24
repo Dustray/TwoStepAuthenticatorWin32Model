@@ -39,8 +39,8 @@
             this.verificationSecret = new System.Windows.Forms.TabPage();
             this.deleteSecret = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cilentTimerLab = new System.Windows.Forms.Label();
+            this.cilentShowUserLab = new System.Windows.Forms.Label();
             this.cilentShowSecretLab = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cilentAddSecretBtn = new System.Windows.Forms.Button();
@@ -180,8 +180,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.cilentTimerLab);
+            this.groupBox2.Controls.Add(this.cilentShowUserLab);
             this.groupBox2.Controls.Add(this.cilentShowSecretLab);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.cilentAddSecretBtn);
@@ -199,34 +199,34 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "模拟客户端（手机）";
             // 
-            // label8
+            // cilentTimerLab
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("宋体", 12F);
-            this.label8.Location = new System.Drawing.Point(282, 283);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 16);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "30";
+            this.cilentTimerLab.AutoSize = true;
+            this.cilentTimerLab.Font = new System.Drawing.Font("宋体", 12F);
+            this.cilentTimerLab.Location = new System.Drawing.Point(282, 258);
+            this.cilentTimerLab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.cilentTimerLab.Name = "cilentTimerLab";
+            this.cilentTimerLab.Size = new System.Drawing.Size(24, 16);
+            this.cilentTimerLab.TabIndex = 9;
+            this.cilentTimerLab.Text = "30";
             // 
-            // label5
+            // cilentShowUserLab
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("宋体", 15F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(45, 163);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(159, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "12345678@qq.com";
+            this.cilentShowUserLab.AutoSize = true;
+            this.cilentShowUserLab.Font = new System.Drawing.Font("宋体", 15F);
+            this.cilentShowUserLab.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cilentShowUserLab.Location = new System.Drawing.Point(45, 138);
+            this.cilentShowUserLab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.cilentShowUserLab.Name = "cilentShowUserLab";
+            this.cilentShowUserLab.Size = new System.Drawing.Size(159, 20);
+            this.cilentShowUserLab.TabIndex = 8;
+            this.cilentShowUserLab.Text = "12345678@qq.com";
             // 
             // cilentShowSecretLab
             // 
             this.cilentShowSecretLab.AutoSize = true;
             this.cilentShowSecretLab.Font = new System.Drawing.Font("宋体", 55F);
-            this.cilentShowSecretLab.Location = new System.Drawing.Point(37, 187);
+            this.cilentShowSecretLab.Location = new System.Drawing.Point(37, 162);
             this.cilentShowSecretLab.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cilentShowSecretLab.Name = "cilentShowSecretLab";
             this.cilentShowSecretLab.Size = new System.Drawing.Size(291, 74);
@@ -237,7 +237,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("黑体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(4, 129);
+            this.label3.Location = new System.Drawing.Point(4, 104);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 20);
@@ -395,6 +395,7 @@
             // 
             // cilentSecretTimer
             // 
+            this.cilentSecretTimer.Enabled = true;
             this.cilentSecretTimer.Interval = 1000;
             this.cilentSecretTimer.Tick += new System.EventHandler(this.cilentSecretTimer_Tick);
             // 
@@ -440,12 +441,12 @@
         private System.Windows.Forms.Button cilentAddSecretBtn;
         private System.Windows.Forms.Label cilentShowSecretLab;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label cilentShowUserLab;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button serverSetNewSecretBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox serverGenerateNewSerectText;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label cilentTimerLab;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label10;

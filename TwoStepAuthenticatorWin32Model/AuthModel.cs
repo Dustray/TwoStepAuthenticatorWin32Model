@@ -44,6 +44,7 @@ namespace TwoStepAuthenticatorWin32Model
             {
                 secretKey = secret;
             }
+            //判断密钥是否为空
             public static bool checkIsSecretEmpty()
             {
                 if (secretKey == null) return true;
@@ -82,12 +83,17 @@ namespace TwoStepAuthenticatorWin32Model
             {
                 secretKey = secret;
             }
+            //判断密钥是否为空
             public static bool checkIsSecretEmpty()
             {
                 if (secretKey == null) return true;
                 else return false;
             }
         }
-
+        public static long GetTimeStamp()
+        {
+            TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return Convert.ToInt64(ts.TotalSeconds * 1000);
+        }
     }
 }

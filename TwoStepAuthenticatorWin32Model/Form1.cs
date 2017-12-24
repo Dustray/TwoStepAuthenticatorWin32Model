@@ -20,6 +20,7 @@ namespace TwoStepAuthenticatorWin32Model
         public Form1()
         {
             InitializeComponent();
+            cilentTimerLab.Text = "";
         }
         //
         private void serverRefreshNewSecretBtn_Click(object sender, EventArgs e)
@@ -63,6 +64,8 @@ namespace TwoStepAuthenticatorWin32Model
                 cilentShowSecretLab.Text = se.Insert(3," ");
                 //设置计数器
                 Count = AuthModel.SetCountTime();
+                cilentTimerLab.Text = "" + (Count+1);
+                cilentSecretTimer.Enabled = true;
             }
             else
             {

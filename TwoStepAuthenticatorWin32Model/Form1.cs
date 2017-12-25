@@ -83,7 +83,7 @@ namespace TwoStepAuthenticatorWin32Model
         }
 
 
-
+        //计时器触发事件
         private void cilentSecretTimer_Tick(object sender, EventArgs e)
         {
              //计数器归零重设验证码
@@ -96,7 +96,7 @@ namespace TwoStepAuthenticatorWin32Model
 
             cilentTimerLab.Text = "" + Count--;
         }
-
+        //服务器验证验证码
         private void serverVerifyCodeBtn_Click(object sender, EventArgs e)
         {
             string code = serverVerifyCodeText.Text.ToString();
@@ -122,7 +122,7 @@ namespace TwoStepAuthenticatorWin32Model
                 MessageBox.Show("输入格式不正确");
             }
         }
-
+        //服务器删除密钥（关闭两步验证）
         private void serverDeleteCodeBtn_Click(object sender, EventArgs e)
         {
             string code = serverDeleteCodeText.Text.ToString();

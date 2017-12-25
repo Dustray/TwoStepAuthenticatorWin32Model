@@ -51,7 +51,7 @@ namespace TwoStepAuthenticatorWin32Model
                 if (secretKey == null) return true;
                 else return false;
             }
-            //判断密钥是否为空
+            //移除密钥
             public static void removeSecret()
             {
                 if (secretKey != null)

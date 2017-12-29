@@ -30,8 +30,15 @@ namespace TwoStepAuthenticatorWin32Model
         //服务端保存新密钥
         private void serverSetNewSecretBtn_Click(object sender, EventArgs e)
         {
+            
             if (serverGenerateNewSerectText.Text != ""&& serverGenerateNewSerectText.Text.Length>10)
             {
+                //符合条件
+                if (serverGenerateNewUserText.Text.Length == 0)
+                {
+                    MessageBox.Show("警告，用户名为空时二维码无法识别！");
+                }
+                serverGenerateNewSerectQR.Image=AuthModel.Server.generateQRCode(serverGenerateNewUserText.Text, serverGenerateNewSerectText.Text);
                 AuthModel.Server.saveSecretKey(serverGenerateNewSerectText.Text);
             }else if(serverGenerateNewSerectText.Text == "")
             {

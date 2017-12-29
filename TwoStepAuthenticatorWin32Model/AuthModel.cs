@@ -1,5 +1,7 @@
-﻿using System;
+﻿using QRCoder;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -56,6 +58,17 @@ namespace TwoStepAuthenticatorWin32Model
             {
                 if (secretKey != null)
                     secretKey = null;
+            }
+
+            public static Bitmap generateQRCode(string user,string secret)
+            {
+                string QRStr = "otpauth://totp/"+user+"?secret="+secret;
+
+                QRCodeGenerator qrGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qrGenerator.CreateQrCode(QRStr, QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
+                Bitmap qrCodeImage = qrCode.GetGraphic(20, "#888", "#fff",false);
+                return qrCodeImage;
             }
         }
         public static class Cilent

@@ -58,12 +58,16 @@
             this.cilentUserText = new System.Windows.Forms.TextBox();
             this.cilentSecretTimer = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.serverGenerateNewSerectQR = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.serverGenerateNewUserText = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.resetSecret.SuspendLayout();
             this.verificationSecret.SuspendLayout();
             this.deleteSecret.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.serverGenerateNewSerectQR)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,11 +96,14 @@
             // 
             // resetSecret
             // 
+            this.resetSecret.Controls.Add(this.serverGenerateNewUserText);
+            this.resetSecret.Controls.Add(this.serverGenerateNewSerectText);
+            this.resetSecret.Controls.Add(this.label4);
+            this.resetSecret.Controls.Add(this.serverGenerateNewSerectQR);
             this.resetSecret.Controls.Add(this.serverRefreshNewSecretBtn);
             this.resetSecret.Controls.Add(this.label7);
             this.resetSecret.Controls.Add(this.serverSetNewSecretBtn);
             this.resetSecret.Controls.Add(this.label6);
-            this.resetSecret.Controls.Add(this.serverGenerateNewSerectText);
             this.resetSecret.Location = new System.Drawing.Point(4, 22);
             this.resetSecret.Margin = new System.Windows.Forms.Padding(2);
             this.resetSecret.Name = "resetSecret";
@@ -108,10 +115,10 @@
             // 
             // serverRefreshNewSecretBtn
             // 
-            this.serverRefreshNewSecretBtn.Location = new System.Drawing.Point(225, 57);
+            this.serverRefreshNewSecretBtn.Location = new System.Drawing.Point(227, 6);
             this.serverRefreshNewSecretBtn.Margin = new System.Windows.Forms.Padding(2);
             this.serverRefreshNewSecretBtn.Name = "serverRefreshNewSecretBtn";
-            this.serverRefreshNewSecretBtn.Size = new System.Drawing.Size(77, 25);
+            this.serverRefreshNewSecretBtn.Size = new System.Drawing.Size(76, 26);
             this.serverRefreshNewSecretBtn.TabIndex = 4;
             this.serverRefreshNewSecretBtn.Text = "刷  新";
             this.serverRefreshNewSecretBtn.UseVisualStyleBackColor = true;
@@ -120,19 +127,19 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(22, 125);
+            this.label7.Location = new System.Drawing.Point(225, 111);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(161, 24);
+            this.label7.Size = new System.Drawing.Size(89, 60);
             this.label7.TabIndex = 3;
-            this.label7.Text = "请勿随意记录和保存此密钥；\r\n请勿将此密钥告诉任何人。";
+            this.label7.Text = "请勿随意记录\r\n和保存此密钥；\r\n\r\n请勿将此密钥\r\n告诉任何人。";
             // 
             // serverSetNewSecretBtn
             // 
-            this.serverSetNewSecretBtn.Location = new System.Drawing.Point(225, 123);
+            this.serverSetNewSecretBtn.Location = new System.Drawing.Point(227, 68);
             this.serverSetNewSecretBtn.Margin = new System.Windows.Forms.Padding(2);
             this.serverSetNewSecretBtn.Name = "serverSetNewSecretBtn";
-            this.serverSetNewSecretBtn.Size = new System.Drawing.Size(77, 27);
+            this.serverSetNewSecretBtn.Size = new System.Drawing.Size(76, 27);
             this.serverSetNewSecretBtn.TabIndex = 2;
             this.serverSetNewSecretBtn.Text = "设为密钥";
             this.serverSetNewSecretBtn.UseVisualStyleBackColor = true;
@@ -142,20 +149,20 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("宋体", 12F);
-            this.label6.Location = new System.Drawing.Point(21, 59);
+            this.label6.Location = new System.Drawing.Point(11, 43);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 1;
-            this.label6.Text = "密钥：";
+            this.label6.Text = "密  钥：";
             // 
             // serverGenerateNewSerectText
             // 
             this.serverGenerateNewSerectText.Font = new System.Drawing.Font("宋体", 12F);
-            this.serverGenerateNewSerectText.Location = new System.Drawing.Point(24, 88);
+            this.serverGenerateNewSerectText.Location = new System.Drawing.Point(78, 38);
             this.serverGenerateNewSerectText.Margin = new System.Windows.Forms.Padding(2);
             this.serverGenerateNewSerectText.Name = "serverGenerateNewSerectText";
-            this.serverGenerateNewSerectText.Size = new System.Drawing.Size(279, 26);
+            this.serverGenerateNewSerectText.Size = new System.Drawing.Size(225, 26);
             this.serverGenerateNewSerectText.TabIndex = 0;
             // 
             // verificationSecret
@@ -385,6 +392,35 @@
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
+            // serverGenerateNewSerectQR
+            // 
+            this.serverGenerateNewSerectQR.Location = new System.Drawing.Point(32, 72);
+            this.serverGenerateNewSerectQR.Name = "serverGenerateNewSerectQR";
+            this.serverGenerateNewSerectQR.Size = new System.Drawing.Size(163, 163);
+            this.serverGenerateNewSerectQR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.serverGenerateNewSerectQR.TabIndex = 5;
+            this.serverGenerateNewSerectQR.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F);
+            this.label4.Location = new System.Drawing.Point(11, 11);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(72, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "用户名：";
+            // 
+            // serverGenerateNewUserText
+            // 
+            this.serverGenerateNewUserText.Font = new System.Drawing.Font("宋体", 12F);
+            this.serverGenerateNewUserText.Location = new System.Drawing.Point(78, 6);
+            this.serverGenerateNewUserText.Margin = new System.Windows.Forms.Padding(2);
+            this.serverGenerateNewUserText.Name = "serverGenerateNewUserText";
+            this.serverGenerateNewUserText.Size = new System.Drawing.Size(143, 26);
+            this.serverGenerateNewUserText.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -408,6 +444,7 @@
             this.deleteSecret.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.serverGenerateNewSerectQR)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,6 +481,9 @@
         private System.Windows.Forms.Button serverRefreshNewSecretBtn;
         private System.Windows.Forms.Timer cilentSecretTimer;
         private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.TextBox serverGenerateNewUserText;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox serverGenerateNewSerectQR;
     }
 }
 
